@@ -102,13 +102,13 @@ export default class FluidAnimation {
     }
   }
 
-  onMouseMove = (e) => {
-    this._pointers[0].moved = this._pointers[0].down
-    this._pointers[0].dx = (e.offsetX - this._pointers[0].x) * 10.0
-    this._pointers[0].dy = (e.offsetY - this._pointers[0].y) * 10.0
-    this._pointers[0].x = e.offsetX
-    this._pointers[0].y = e.offsetY
-  }
+  // onMouseMove = (e) => {
+  //   this._pointers[0].moved = this._pointers[0].down
+  //   this._pointers[0].dx = (e.offsetX - this._pointers[0].x) * 10.0
+  //   this._pointers[0].dy = (e.offsetY - this._pointers[0].y) * 10.0
+  //   this._pointers[0].x = e.offsetX
+  //   this._pointers[0].y = e.offsetY
+  // }
 
   // onMouseDown = (e) => {
   //   this._pointers[0].down = true
@@ -119,37 +119,37 @@ export default class FluidAnimation {
   //   ]
   // }
 
-  onMouseUp = (e) => {
-    this._pointers[0].down = false
-  }
+  // onMouseUp = (e) => {
+  //   this._pointers[0].down = false
+  // }
 
-  onTouchStart = (e) => {
-    for (let i = 0; i < e.touches.length; ++i) {
-      this._pointers[i].down = true
-      this._pointers[i].color = [
-        Math.random() + 0.2,
-        Math.random() + 0.2,
-        Math.random() + 0.2
-      ]
-    }
-  }
+  // onTouchStart = (e) => {
+  //   for (let i = 0; i < e.touches.length; ++i) {
+  //     this._pointers[i].down = true
+  //     this._pointers[i].color = [
+  //       Math.random() + 0.2,
+  //       Math.random() + 0.2,
+  //       Math.random() + 0.2
+  //     ]
+  //   }
+  // }
 
-  onTouchMove = (e) => {
-    for (let i = 0; i < e.touches.length; ++i) {
-      const touch = e.touches[i]
-      this._pointers[i].moved = this._pointers[i].down
-      this._pointers[i].dx = (touch.clientX - this._pointers[i].x) * 10.0
-      this._pointers[i].dy = (touch.clientY - this._pointers[i].y) * 10.0
-      this._pointers[i].x = touch.clientX
-      this._pointers[i].y = touch.clientY
-    }
-  }
+  // onTouchMove = (e) => {
+  //   for (let i = 0; i < e.touches.length; ++i) {
+  //     const touch = e.touches[i]
+  //     this._pointers[i].moved = this._pointers[i].down
+  //     this._pointers[i].dx = (touch.clientX - this._pointers[i].x) * 10.0
+  //     this._pointers[i].dy = (touch.clientY - this._pointers[i].y) * 10.0
+  //     this._pointers[i].x = touch.clientX
+  //     this._pointers[i].y = touch.clientY
+  //   }
+  // }
 
-  onTouchEnd = (e) => {
-    for (let i = 0; i < e.touches.length; ++i) {
-      this._pointers[i].down = false
-    }
-  }
+  // onTouchEnd = (e) => {
+  //   for (let i = 0; i < e.touches.length; ++i) {
+  //     this._pointers[i].down = false
+  //   }
+  // }
 
   _initPrograms() {
     const gl = this._gl
