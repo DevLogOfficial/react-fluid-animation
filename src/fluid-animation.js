@@ -13,7 +13,7 @@ export const defaultConfig = {
   splatRadius: 0.005
 }
 
-class Pointer {
+export class Pointer {
   constructor() {
     this.id = -1
     this.x = 0
