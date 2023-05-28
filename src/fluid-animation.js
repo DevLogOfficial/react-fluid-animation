@@ -383,7 +383,7 @@ export default class FluidAnimation {
       const pointer = this._pointers[i]
       if (pointer.moved) {
         this._splat(pointer.x, pointer.y, pointer.dx, pointer.dy, pointer.color)
-        pointer.moved = false
+        // pointer.moved = false
       }
     }
 
