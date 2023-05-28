@@ -88,33 +88,6 @@ class ReactFluidAnimation extends Component {
     this._canvas = ref
   }
 
-  // _onMouseDown = (event) => {
-  //   event.preventDefault()
-  //   this._animation.onMouseDown(event.nativeEvent)
-  // }
-
-  // _onMouseMove = (event) => {
-  //   event.preventDefault()
-  //   this._animation.onMouseMove(event.nativeEvent)
-  // }
-
-  // _onMouseUp = (event) => {
-  //   event.preventDefault()
-  //   this._animation.onMouseUp(event.nativeEvent)
-  // }
-
-  // _onTouchStart = (event) => {
-  //   this._animation.onTouchStart(event.nativeEvent)
-  // }
-
-  // _onTouchMove = (event) => {
-  //   this._animation.onTouchMove(event.nativeEvent)
-  // }
-
-  // _onTouchEnd = (event) => {
-  //   this._animation.onTouchEnd(event.nativeEvent)
-  // }
-
   _onResize = () => {
     this._canvas.width = this._container.clientWidth
     this._canvas.height = this._container.clientHeight
