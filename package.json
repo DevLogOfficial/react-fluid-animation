@@ -26,7 +26,7 @@
     "prestart": "yarn run clean",
     "start": "babel src -w -s -d dist",
     "dev": "yarn start",
-    "clean": "del dist",
+    "clean": "del /S /Q dist",
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "prepare": "yarn build",
