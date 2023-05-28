@@ -21,16 +21,16 @@
     "flow"
   ],
   "scripts": {
-    "prebuild": "yarn run clean",
+    "prebuild": "npm run clean",
     "build": "babel src -s -d dist",
-    "prestart": "yarn run clean",
+    "prestart": "npm run clean",
     "start": "babel src -w -s -d dist",
-    "dev": "yarn start",
+    "dev": "npm start",
     "clean": "del dist",
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "prepare": "yarn build",
-    "predeploy": "cd example && yarn install && yarn build",
+    "prepare": "npm build",
+    "predeploy": "cd example && npm install && npm build",
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
