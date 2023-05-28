@@ -39,7 +39,7 @@ export default class FluidAnimation {
     this._canvas = canvas
     this._config = config
 
-    this._pointers = [ new Pointer() ]
+    this._pointers = [new Pointer()]
     this._splatStack = []
 
     const { gl, ext } = getGLContext(canvas)
@@ -71,11 +71,11 @@ export default class FluidAnimation {
   }
 
   addSplat(splat) {
-    this._splatStack.push([ splat ])
+    this._splatStack.push([splat])
   }
 
   addSplats(splats) {
-    this._splatStack.push(Array.isArray(splats) ? splats : [ splats ])
+    this._splatStack.push(Array.isArray(splats) ? splats : [splats])
   }
 
   addRandomSplats(count) {
@@ -110,14 +110,14 @@ export default class FluidAnimation {
     this._pointers[0].y = e.offsetY
   }
 
-  onMouseDown = (e) => {
-    this._pointers[0].down = true
-    this._pointers[0].color = [
-      Math.random() + 0.2,
-      Math.random() + 0.2,
-      Math.random() + 0.2
-    ]
-  }
+  // onMouseDown = (e) => {
+  //   this._pointers[0].down = true
+  //   this._pointers[0].color = [
+  //     Math.random() + 0.2,
+  //     Math.random() + 0.2,
+  //     Math.random() + 0.2
+  //   ]
+  // }
 
   onMouseUp = (e) => {
     this._pointers[0].down = false
@@ -155,7 +155,7 @@ export default class FluidAnimation {
     const gl = this._gl
     const ext = this._ext
 
-    this._programs = { }
+    this._programs = {}
     this._programs.clear = new GLProgram(gl, shaders.vert, shaders.clear)
     this._programs.display = new GLProgram(gl, shaders.vert, shaders.display)
     this._programs.splat = new GLProgram(gl, shaders.vert, shaders.splat)
@@ -331,7 +331,7 @@ export default class FluidAnimation {
   }
 
   _getRandomSplat() {
-    const color = [ Math.random() * 10, Math.random() * 10, Math.random() * 10 ]
+    const color = [Math.random() * 10, Math.random() * 10, Math.random() * 10]
     const x = this._canvas.width * Math.random()
     const y = this._canvas.height * Math.random()
     const dx = 1000 * (Math.random() - 0.5)
