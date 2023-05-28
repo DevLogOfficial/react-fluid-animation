@@ -20,7 +20,7 @@ class ReactFluidAnimation extends Component {
 
   static defaultProps = {
     config: defaultConfig,
-    style: { }
+    style: {}
   }
 
   componentWillReceiveProps(props) {
@@ -71,12 +71,6 @@ class ReactFluidAnimation extends Component {
       >
         <canvas
           ref={this._canvasRef}
-          onMouseDown={this._onMouseDown}
-          onMouseMove={this._onMouseMove}
-          onMouseUp={this._onMouseUp}
-          onTouchStart={this._onTouchStart}
-          onTouchMove={this._onTouchMove}
-          onTouchEnd={this._onTouchEnd}
           style={{
             width: '100%',
             height: '100%'
@@ -94,32 +88,32 @@ class ReactFluidAnimation extends Component {
     this._canvas = ref
   }
 
-  _onMouseDown = (event) => {
-    event.preventDefault()
-    this._animation.onMouseDown(event.nativeEvent)
-  }
+  // _onMouseDown = (event) => {
+  //   event.preventDefault()
+  //   this._animation.onMouseDown(event.nativeEvent)
+  // }
 
-  _onMouseMove = (event) => {
-    event.preventDefault()
-    this._animation.onMouseMove(event.nativeEvent)
-  }
+  // _onMouseMove = (event) => {
+  //   event.preventDefault()
+  //   this._animation.onMouseMove(event.nativeEvent)
+  // }
 
-  _onMouseUp = (event) => {
-    event.preventDefault()
-    this._animation.onMouseUp(event.nativeEvent)
-  }
+  // _onMouseUp = (event) => {
+  //   event.preventDefault()
+  //   this._animation.onMouseUp(event.nativeEvent)
+  // }
 
-  _onTouchStart = (event) => {
-    this._animation.onTouchStart(event.nativeEvent)
-  }
+  // _onTouchStart = (event) => {
+  //   this._animation.onTouchStart(event.nativeEvent)
+  // }
 
-  _onTouchMove = (event) => {
-    this._animation.onTouchMove(event.nativeEvent)
-  }
+  // _onTouchMove = (event) => {
+  //   this._animation.onTouchMove(event.nativeEvent)
+  // }
 
-  _onTouchEnd = (event) => {
-    this._animation.onTouchEnd(event.nativeEvent)
-  }
+  // _onTouchEnd = (event) => {
+  //   this._animation.onTouchEnd(event.nativeEvent)
+  // }
 
   _onResize = () => {
     this._canvas.width = this._container.clientWidth
