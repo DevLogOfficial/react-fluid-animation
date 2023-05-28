@@ -4,7 +4,7 @@
   "description": "Fluid media animation for React powered by WebGL.",
   "author": "transitive-bullshit",
   "license": "MIT",
-  "repository": "https://github.com/DevLogOfficial/react-fluid-animation",
+  "repository": "DevLogOfficial/react-fluid-animation",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
