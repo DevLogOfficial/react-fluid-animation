@@ -367,25 +367,25 @@ export default class FluidAnimation {
       this._addSplats(this._splatStack.pop())
     }
 
-    // this._programs.advection.bind()
-    // gl.uniform2f(this._programs.advection.uniforms.texelSize, iW, iH)
-    // gl.uniform1i(this._programs.advection.uniforms.uVelocity, this._velocity.read[2])
-    // gl.uniform1i(this._programs.advection.uniforms.uSource, this._velocity.read[2])
-    // gl.uniform1f(this._programs.advection.uniforms.dt, dt)
-    // gl.uniform1f(
-    //   this._programs.advection.uniforms.dissipation,
-    //   this._config.velocityDissipation
-    // )
-    // this._blit(this._velocity.write[1])
-    // this._velocity.swap()
+    this._programs.advection.bind()
+    gl.uniform2f(this._programs.advection.uniforms.texelSize, iW, iH)
+    gl.uniform1i(this._programs.advection.uniforms.uVelocity, this._velocity.read[2])
+    gl.uniform1i(this._programs.advection.uniforms.uSource, this._velocity.read[2])
+    gl.uniform1f(this._programs.advection.uniforms.dt, dt)
+    gl.uniform1f(
+      this._programs.advection.uniforms.dissipation,
+      this._config.velocityDissipation
+    )
+    this._blit(this._velocity.write[1])
+    this._velocity.swap()
 
-    // gl.uniform1i(this._programs.advection.uniforms.uVelocity, this._velocity.read[2])
-    // gl.uniform1i(this._programs.advection.uniforms.uSource, this._density.read[2])
-    // gl.uniform1f(
-    //   this._programs.advection.uniforms.dissipation,
-    //   this._config.densityDissipation
-    // )
-    // this._blit(this._density.write[1])
+    gl.uniform1i(this._programs.advection.uniforms.uVelocity, this._velocity.read[2])
+    gl.uniform1i(this._programs.advection.uniforms.uSource, this._density.read[2])
+    gl.uniform1f(
+      this._programs.advection.uniforms.dissipation,
+      this._config.densityDissipation
+    )
+    this._blit(this._density.write[1])
     // this._density.swap()
 
     for (let i = 0; i < this._pointers.length; i++) {
