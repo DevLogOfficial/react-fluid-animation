@@ -1,4 +1,4 @@
-export default function getWebGLContext (canvas) {
+export default function getWebGLContext(canvas) {
   const params = {
     alpha: false,
     depth: false,
@@ -24,7 +24,7 @@ export default function getWebGLContext (canvas) {
     supportLinearFiltering = gl.getExtension('OES_texture_half_float_linear')
   }
 
-  gl.clearColor(0.0, 0.0, 0.0, 1.0)
+  gl.clearColor(255.0, 0.0, 0.0, 1.0)
 
   const halfFloatTexType = isWebGL2 ? gl.HALF_FLOAT : halfFloat.HALF_FLOAT_OES
   let formatRGBA
@@ -53,7 +53,7 @@ export default function getWebGLContext (canvas) {
   }
 }
 
-function getSupportedFormat (gl, internalFormat, format, type) {
+function getSupportedFormat(gl, internalFormat, format, type) {
   if (!supportRenderTextureFormat(gl, internalFormat, format, type)) {
     switch (internalFormat) {
       case gl.R16F:
@@ -71,7 +71,7 @@ function getSupportedFormat (gl, internalFormat, format, type) {
   }
 }
 
-function supportRenderTextureFormat (gl, internalFormat, format, type) {
+function supportRenderTextureFormat(gl, internalFormat, format, type) {
   const texture = gl.createTexture()
   gl.bindTexture(gl.TEXTURE_2D, texture)
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST)

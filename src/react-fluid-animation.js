@@ -78,7 +78,6 @@ class ReactFluidAnimation extends Component {
           onTouchMove={this._onTouchMove}
           onTouchEnd={this._onTouchEnd}
           style={{
-            background: 'red',
             width: '100%',
             height: '100%'
           }}
