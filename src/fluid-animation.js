@@ -71,11 +71,15 @@ export default class FluidAnimation {
   }
 
   get color() {
-    return this._canvas.style.backgroundColor;
+    return gl.color;
   }
 
   set color(color) {
-    this._canvas.style.backgroundColor = color;
+    var r = color[0];
+    var g = color[1];
+    var b = color[2];
+    var a = color[3];
+    gl.clearColor(r, g, b, a);
   }
 
   addSplat(splat) {
