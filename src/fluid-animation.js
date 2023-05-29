@@ -70,11 +70,7 @@ export default class FluidAnimation {
     return this._canvas.height
   }
 
-  get color() {
-    return gl.color;
-  }
-
-  set color(color) {
+  setColor(color) {
     var r = color[0];
     var g = color[1];
     var b = color[2];
