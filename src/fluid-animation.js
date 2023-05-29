@@ -70,6 +70,10 @@ export default class FluidAnimation {
     return this._canvas.height
   }
 
+  set color(color) {
+    this._canvas.current.style.backgroundColor = color;
+  }
+
   addSplat(splat) {
     this._splatStack.push([splat])
   }
