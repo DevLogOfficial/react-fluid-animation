@@ -202,6 +202,7 @@ export default class FluidAnimation {
         0
       )
       gl.viewport(0, 0, w, h)
+      gl.clearColor(24 / 255, 30 / 255, 36 / 255, 0)
       gl.clear(gl.COLOR_BUFFER_BIT)
 
       return [texture, fbo, texId]
