@@ -386,7 +386,7 @@ export default class FluidAnimation {
       this._config.densityDissipation
     )
     this._blit(this._density.write[1])
-    // this._density.swap()
+    this._density.swap()
 
     for (let i = 0; i < this._pointers.length; i++) {
       const pointer = this._pointers[i]
