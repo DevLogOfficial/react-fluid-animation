@@ -70,6 +70,10 @@ export default class FluidAnimation {
     return this._canvas.height
   }
 
+  get color() {
+    return this._canvas.current.style.backgroundColor;
+  }
+
   set color(color) {
     this._canvas.current.style.backgroundColor = color;
   }
