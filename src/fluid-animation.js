@@ -164,7 +164,7 @@ export default class FluidAnimation {
     const ext = this._ext
 
     this._programs = {}
-    this._programs.clear = new GLProgram(gl, shaders.vert, shaders.clear)
+    //this._programs.clear = new GLProgram(gl, shaders.vert, shaders.clear)
     this._programs.display = new GLProgram(gl, shaders.vert, shaders.display)
     this._programs.splat = new GLProgram(gl, shaders.vert, shaders.splat)
     this._programs.advection = new GLProgram(gl, shaders.vert, ext.supportLinearFiltering
@@ -202,7 +202,7 @@ export default class FluidAnimation {
         0
       )
       gl.viewport(0, 0, w, h)
-      gl.clear(gl.COLOR_BUFFER_BIT)
+      //gl.clear(gl.COLOR_BUFFER_BIT)
 
       return [texture, fbo, texId]
     }
