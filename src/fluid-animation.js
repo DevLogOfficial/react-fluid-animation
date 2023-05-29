@@ -396,45 +396,45 @@ export default class FluidAnimation {
       }
     }
 
-    // this._programs.curl.bind()
-    // gl.uniform2f(this._programs.curl.uniforms.texelSize, iW, iH)
-    // gl.uniform1i(this._programs.curl.uniforms.uVelocity, this._velocity.read[2])
-    // this._blit(this._curl[1])
+    this._programs.curl.bind()
+    gl.uniform2f(this._programs.curl.uniforms.texelSize, iW, iH)
+    gl.uniform1i(this._programs.curl.uniforms.uVelocity, this._velocity.read[2])
+    this._blit(this._curl[1])
 
-    // this._programs.vorticity.bind()
-    // gl.uniform2f(this._programs.vorticity.uniforms.texelSize, iW, iH)
-    // gl.uniform1i(this._programs.vorticity.uniforms.uVelocity, this._velocity.read[2])
-    // gl.uniform1i(this._programs.vorticity.uniforms.uCurl, this._curl[2])
-    // gl.uniform1f(this._programs.vorticity.uniforms.curl, this._config.curl)
-    // gl.uniform1f(this._programs.vorticity.uniforms.dt, dt)
-    // this._blit(this._velocity.write[1])
-    // this._velocity.swap()
+    this._programs.vorticity.bind()
+    gl.uniform2f(this._programs.vorticity.uniforms.texelSize, iW, iH)
+    gl.uniform1i(this._programs.vorticity.uniforms.uVelocity, this._velocity.read[2])
+    gl.uniform1i(this._programs.vorticity.uniforms.uCurl, this._curl[2])
+    gl.uniform1f(this._programs.vorticity.uniforms.curl, this._config.curl)
+    gl.uniform1f(this._programs.vorticity.uniforms.dt, dt)
+    this._blit(this._velocity.write[1])
+    this._velocity.swap()
 
-    // this._programs.divergence.bind()
-    // gl.uniform2f(this._programs.divergence.uniforms.texelSize, iW, iH)
-    // gl.uniform1i(this._programs.divergence.uniforms.uVelocity, this._velocity.read[2])
-    // this._blit(this._divergence[1])
+    this._programs.divergence.bind()
+    gl.uniform2f(this._programs.divergence.uniforms.texelSize, iW, iH)
+    gl.uniform1i(this._programs.divergence.uniforms.uVelocity, this._velocity.read[2])
+    this._blit(this._divergence[1])
 
-    // this._programs.clear.bind()
-    // let pressureTexId = this._pressure.read[2]
-    // gl.activeTexture(gl.TEXTURE0 + pressureTexId)
-    // gl.bindTexture(gl.TEXTURE_2D, this._pressure.read[0])
-    // gl.uniform1i(this._programs.clear.uniforms.uTexture, pressureTexId)
-    // gl.uniform1f(this._programs.clear.uniforms.value, this._config.pressureDissipation)
-    // this._blit(this._pressure.write[1])
-    // this._pressure.swap()
+    this._programs.clear.bind()
+    let pressureTexId = this._pressure.read[2]
+    gl.activeTexture(gl.TEXTURE0 + pressureTexId)
+    gl.bindTexture(gl.TEXTURE_2D, this._pressure.read[0])
+    gl.uniform1i(this._programs.clear.uniforms.uTexture, pressureTexId)
+    gl.uniform1f(this._programs.clear.uniforms.value, this._config.pressureDissipation)
+    this._blit(this._pressure.write[1])
+    this._pressure.swap()
 
-    // this._programs.pressure.bind()
-    // gl.uniform2f(this._programs.pressure.uniforms.texelSize, iW, iH)
-    // gl.uniform1i(this._programs.pressure.uniforms.uDivergence, this._divergence[2])
-    // pressureTexId = this._pressure.read[2]
-    // gl.uniform1i(this._programs.pressure.uniforms.uPressure, pressureTexId)
-    // gl.activeTexture(gl.TEXTURE0 + pressureTexId)
-    // for (let i = 0; i < this._config.pressureIterations; i++) {
-    //   gl.bindTexture(gl.TEXTURE_2D, this._pressure.read[0])
-    //   this._blit(this._pressure.write[1])
-    //   this._pressure.swap()
-    // }
+    this._programs.pressure.bind()
+    gl.uniform2f(this._programs.pressure.uniforms.texelSize, iW, iH)
+    gl.uniform1i(this._programs.pressure.uniforms.uDivergence, this._divergence[2])
+    pressureTexId = this._pressure.read[2]
+    gl.uniform1i(this._programs.pressure.uniforms.uPressure, pressureTexId)
+    gl.activeTexture(gl.TEXTURE0 + pressureTexId)
+    for (let i = 0; i < this._config.pressureIterations; i++) {
+      gl.bindTexture(gl.TEXTURE_2D, this._pressure.read[0])
+      this._blit(this._pressure.write[1])
+      this._pressure.swap()
+    }
 
     // this._programs.gradientSubtract.bind()
     // gl.uniform2f(this._programs.gradientSubtract.uniforms.texelSize, iW, iH)
@@ -443,9 +443,9 @@ export default class FluidAnimation {
     // this._blit(this._velocity.write[1])
     // this._velocity.swap()
 
-    // gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
-    // this._programs.display.bind()
-    // gl.uniform1i(this._programs.display.uniforms.uTexture, this._density.read[2])
-    // this._blit(null)
+    gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
+    this._programs.display.bind()
+    gl.uniform1i(this._programs.display.uniforms.uTexture, this._density.read[2])
+    this._blit(null)
   }
 }
