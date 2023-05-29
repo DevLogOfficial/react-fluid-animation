@@ -71,11 +71,11 @@ export default class FluidAnimation {
   }
 
   get color() {
-    return this._canvas.current.style.backgroundColor;
+    return this._canvas.style.backgroundColor;
   }
 
   set color(color) {
-    this._canvas.current.style.backgroundColor = color;
+    this._canvas.style.backgroundColor = color;
   }
 
   addSplat(splat) {
