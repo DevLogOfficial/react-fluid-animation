@@ -11,8 +11,7 @@ uniform float dissipation;
 
 void main () {
   vec2 coord = vUv - dt * texture2D(uVelocity, vUv).xy * texelSize;
-  vec4 color = dissipation * texture2D(uSource, coord);
-  gl_FragColor = vec4(max(color.rgb, vec3(24.0/255.0, 30.0/255.0, 36.0/255.0)), 0.0);
+  gl_FragColor = dissipation * texture2D(uSource, coord);
   gl_FragColor.a = 1.0;
 }
 `
