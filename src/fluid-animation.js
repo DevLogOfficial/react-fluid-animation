@@ -418,8 +418,8 @@ export default class FluidAnimation {
     let pressureTexId = this._pressure.read[2]
     gl.activeTexture(gl.TEXTURE0 + pressureTexId)
     gl.bindTexture(gl.TEXTURE_2D, this._pressure.read[0])
-    //gl.uniform1i(this._programs.clear.uniforms.uTexture, pressureTexId)
-    // gl.uniform1f(this._programs.clear.uniforms.value, this._config.pressureDissipation)
+    gl.uniform1i(this._programs.clear.uniforms.uTexture, pressureTexId)
+    gl.uniform1f(this._programs.clear.uniforms.value, this._config.pressureDissipation)
     this._blit(this._pressure.write[1])
     this._pressure.swap()
 
