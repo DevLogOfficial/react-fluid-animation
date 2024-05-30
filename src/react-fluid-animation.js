@@ -77,6 +77,7 @@ class ReactFluidAnimation extends Component {
           onTouchStart={this._onTouchStart}
           onTouchMove={this._onTouchMove}
           onTouchEnd={this._onTouchEnd}
+          _pointers={this._pointers}
           style={{
             width: '100%',
             height: '100%'
